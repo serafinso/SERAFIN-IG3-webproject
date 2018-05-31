@@ -16,9 +16,13 @@
 								<img class="card-img-top" src="/img/avatar.png"/>
 								<div class="col-auto">
 									<div class="input-group mb-3">
-										<?php if (isset($POST['message'])): ?>
-											<span><?php echo $message; ?></span>
-
+										<?php if (isset($message)): ?>
+											<div class="alert alert-warning alert-dismissible fade show" role="alert">
+												<?php echo $message; ?>
+													<button type="button" class="btn btn-lg close" data-dismiss="alert" aria-label="Close" placeholder="error">
+														<span aria-hidden="true">&times;</span>
+													</button>
+											</div>
 										<?php endif; ?>
 									</div>
 								</div>
@@ -46,7 +50,6 @@
 										name="user_password" value="<?php if (isset($user)): $user->echo('password'); endif; ?>" required />
 									</div>
 									<button class="btn btn-lg btn-primary btn-block" type="submit" name="login"> CONNEXION </button>
-									<button class="btn btn-lg btn-success btn-block" type="submit" name="reg"> REGISTER </button>
 								</form>
 							</div>
 						</div>

@@ -30,7 +30,7 @@
 
         <title><?= $title ?></title>
 
-
+	</head>
 	<body>
 		<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -40,26 +40,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item">
-              <a class="nav-link" href="accueil.php">Accueil<span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="horaire.php">Horaires</a>
-            </li>
-
-            <li class="nav-item" >
-              <a class="nav-link" href ="nousContacter.php">Nous contacter</a>
-            </li>
-
-          </ul>
+							<li class="nav-item"><a class="nav-link" href="../controller/controller_accueil.php">Accueil<span class="sr-only">(current)</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="../controller/controller_horraire.php">Horaires</a></li>
+							<li class="nav-item" ><a class="nav-link" href ="../controller/controller_nousContacter.php">Nous contacter</a></li>
+							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="../controller/controller_eleves.php">Eleves</a></li> <?php } ?>
+							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="../controller/controller_professeurs.php">Professeur</a></li> <?php } ?>
+					</ul>
           <ul class="navbar-nav navbar-right my-2 my-lg-0" id="navbarResponsive">
-
-            <li class="nav-item">
-              <a class="nav-link" href="connect.php"><span class="glyphicon-log-in"> </span>Connexion administrateur</a>
-            </li>
-
+						<?php if (!isConnected()) {?> <li class="nav-item"><a class="nav-link" href="../controller/controller_connect.php"><span class="glyphicon-log-in"> </span>Connexion administrateur</a></li> <?php } ?>
+						<?php if (isConnected()) {?> <li class="nav-item"><a class="nav-link" href="../controller/controller_deconnexion.php"><span class="glyphicon-log-in"> </span>Déconnexion</a>  </li> <?php } ?>
           </ul>
 				</div>
 			</div>
