@@ -1,6 +1,9 @@
-<<?php
+<?php
+
   require_once('routeur.php');
-  setcookie('user', '', time() - 3600, '/');
-  require_once('view/deconnexion.php');
+  require_once('controller/controller_deconnect.php');
+
+  require_once('view/connexion.php');
+?>
 
  ?>

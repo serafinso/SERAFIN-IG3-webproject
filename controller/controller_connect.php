@@ -1,7 +1,7 @@
 <?php
 //login.php
 require_once('routeur.php');
-require_once("model/bdd.php");
+require_once("model/bd.php");
 
 if(isset($_COOKIE["type"])){
   //header("location: Connect.php");
@@ -33,14 +33,14 @@ if(isset($_POST["login"]))
         }
         else
         {
-          $message = 'Wrong Password';
+          $message = 'Mot de passe incorrect';
           //header("location:../view/connect.php?message=".$message);
         }
       }
     }
     else
     {
-      $message = "Wrong Email Address";
+      $message = "adresse email incorrecte";
       //header("location:../view/connect.php?message=".$message);
     }
   }
