@@ -40,15 +40,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="../controller/controller_accueil.php">Accueil<span class="sr-only">(current)</span></a></li>
-							<li class="nav-item"><a class="nav-link" href="../controller/controller_horraire.php">Horaires</a></li>
-							<li class="nav-item" ><a class="nav-link" href ="../controller/controller_nousContacter.php">Nous contacter</a></li>
-							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="../controller/controller_eleves.php">Eleves</a></li> <?php } ?>
-							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="../controller/controller_professeurs.php">Professeur</a></li> <?php } ?>
+							<li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil<span class="sr-only">(current)</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="Horaire.php">Horaires</a></li>
+							<li class="nav-item" ><a class="nav-link" href ="NousContacter.php">Nous contacter</a></li>
+							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Eleves.php">Eleves</a></li> <?php } ?>
+							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Professeurs.php">Professeur</a></li> <?php } ?>
 					</ul>
           <ul class="navbar-nav navbar-right my-2 my-lg-0" id="navbarResponsive">
-						<?php if (!isConnected()) {?> <li class="nav-item"><a class="nav-link" href="../controller/controller_connect.php"><span class="glyphicon-log-in"> </span>Connexion administrateur</a></li> <?php } ?>
-						<?php if (isConnected()) {?> <li class="nav-item"><a class="nav-link" href="../controller/controller_deconnexion.php"><span class="glyphicon-log-in"> </span>Déconnexion</a>  </li> <?php } ?>
+						<?php if (!isConnected()) {?> <li class="nav-item"><a class="nav-link" href="Connexion.php"><span class="glyphicon-log-in"> </span>Connexion administrateur</a></li> <?php } ?>
+						<?php if (isConnected()) {?> <li class="nav-item"><a class="nav-link" href="Deconnexion.php"><span class="glyphicon-log-in"> </span>Déconnexion</a>  </li> <?php } ?>
           </ul>
 				</div>
 			</div>
