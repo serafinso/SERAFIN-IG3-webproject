@@ -2,8 +2,15 @@
   <?php $title = "" ?>
 
   <?php ob_start(); ?>
+  <div class="row">
+    <div class="col-sm-8">
+        <h1 class="text-center"> Professeurs </h1>
+    </div>
+    <div class="col-sm-4">
+      <td>	<a class='btn btn-success' href='Professeur_creer.php'>Créer</a> </td>
+    </div>
+  </div>
 
-  <h1 class="text-center"> Professeurs </h1>
   <hr>
   <?php
     if (!isset($profs)){
