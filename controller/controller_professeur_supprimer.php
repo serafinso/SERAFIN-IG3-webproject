@@ -2,7 +2,7 @@
 
   require_once('routeur.php');
   require_once('model/model_professeur.php');
-
-  $profs = Professeurs::all_id_professeur();
-  require_once('view/professeur_supprimer.php');
+  $id = $_GET['idprof'];
+  $profs = Professeur :: prof_supprimer($id);
+  header("Location: ../Professeur.php");
 ?>

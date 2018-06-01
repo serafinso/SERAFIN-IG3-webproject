@@ -3,15 +3,15 @@ drop table if exists eleve cascade;
 drop table if exists professeur cascade;
 
 CREATE TABLE users (
-  user_id numeric(20) PRIMARY KEY,
+  user_id SERIAL PRIMARY KEY,
   user_email varchar(100) NOT NULL UNIQUE,
   user_password varchar(100) NOT NULL,
-  user_name varchar(100) NOT NULL,
+  user_nom varchar(100) NOT NULL,
   user_image varchar(100) DEFAULT NULL
 );
 
 CREATE TABLE eleve (
-  eleve_id numeric(20) PRIMARY KEY,
+  eleve_id SERIAL PRIMARY KEY,
   eleve_nom varchar(100) NOT NULL,
   eleve_prenom varchar(100) NOT NULL,
   eleve_age numeric(3) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE eleve (
 );
 
 CREATE TABLE professeur (
-  professeur_id numeric(20) PRIMARY KEY,
+  professeur_id SERIAL PRIMARY KEY,
   professeur_nom varchar(100) NOT NULL,
   professeur_prenom varchar(100) NOT NULL,
   professeur_age numeric(3) NOT NULL,

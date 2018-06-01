@@ -36,8 +36,8 @@
            echo"<td>" . $row['professeur_age'] . "</td>";
            echo"<td>" . $row['professeur_telephone'] . "</td>";
            echo"<td>" . $row['professeur_email'] . "</td>";
-           echo"<td>	<a class='btn btn-primary' href='Professeur_modifier.php'>Modifier </a> </td>";
-           echo"<td>	<a class='btn btn-danger' href='Professeur_supprimer.php'>Supprimer </a> </td>";
+           echo"<td>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </td>";
+           echo"<td>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </td>";
 
          echo"</tr>";}
        echo"</tbody>";
