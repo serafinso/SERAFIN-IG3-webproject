@@ -7,18 +7,18 @@
 <div class="container">
   <?php $title = "" ?>
   <?php ob_start(); ?>
-  <h1 class="text-center"> Professeurs </h1>
-    <hr>
-    <?php $id = $_GET['idprof'];
-    $data = Professeur::all_information_professeur($id);
-    $data = $data[0];
-    $nom = $data[1];
-    $prenom = $data[2];
-    $age = $data[3];
-    $telephone = $data[4];
-    $email =$data[5];
+  <?php $id = $_GET['idprof'];
+  $data = Professeur::all_information_professeur($id);
+  $data = $data[0];
+  $nom = $data[1];
+  $prenom = $data[2];
+  $dn = $data[3];
+  $telephone = $data[4];
+  $email =$data[5];
 
-    ?>
+  ?>
+  <h1 class="text-center"> Modification du professeur <?php echo"$nom" ?></h1>
+    <hr>
     <div class="row">
     <div class="col"></div>
 
@@ -35,8 +35,8 @@
           name="professeur_prenom" value=<?php echo"'$prenom'" ?> >
         </div>
         <div class = form-group>
-          <input class="form-control" type="text" placeholder="Age"
-            name="professeur_age" value=<?php echo"' $age'" ?>>
+          <input class="form-control" type="text" placeholder="Date de naissance"
+            name="professeur_date_naissance" value=<?php echo"' $dn'" ?>>
         </div>
         <div class = form-group>
           <input class="form-control" type="text" placeholder="Téléphone"

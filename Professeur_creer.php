@@ -3,7 +3,7 @@
 <div class="container">
   <?php $title = "" ?>
   <?php ob_start(); ?>
-  <h1 class="text-center"> Création professeur </h1>
+  <h1 class="text-center"> Création d'un professeur </h1>
     <hr>
     <div class="row">
     <div class="col"></div>
@@ -19,8 +19,8 @@
           name="professeur_prenom" required />
         </div>
         <div class = form-group>
-          <input class="form-control" type="text" placeholder="Age"
-            name="professeur_age" endif; required />
+          <input class="form-control" type="text" placeholder="Date de naissance"
+            name="professeur_date_naissance" endif; required />
         </div>
         <div class = form-group>
           <input class="form-control" type="text" placeholder="Téléphone"

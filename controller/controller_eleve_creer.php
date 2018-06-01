@@ -5,15 +5,15 @@
 
   $nom = htmlspecialchars($_POST['eleve_nom']);
   $prenom = htmlspecialchars($_POST['eleve_prenom']);
-  $age = htmlspecialchars($_POST['eleve_age']);
+  $dn = htmlspecialchars($_POST['eleve_date_naissance']);
   $telephone = htmlspecialchars($_POST['eleve_telephone']);
   $email = htmlspecialchars($_POST['eleve_email']);
 
-  if (empty($nom) || empty($prenom) || empty($age) || empty($telephone) || empty($email)) {
+  if (empty($nom) || empty($prenom) || empty($dn) || empty($telephone) || empty($email)) {
       $erreur = "Veuillez remplir tous les champs";
       header("Location: ../eleve_creer.php?erreur='$erreur'");
   }else{
-    $eleve = ELeve:: e_creer($nom,$prenom,$age,$telephone, $email);
+    $eleves = ELeve:: e_creer($nom,$prenom,$dn,$telephone,$email);
     header("Location: ../eleve.php");
   }
 ?>

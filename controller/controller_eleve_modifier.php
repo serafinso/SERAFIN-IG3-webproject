@@ -15,7 +15,7 @@
       $erreur = "Veuillez remplir tous les champs";
       header("Location: ../eleve_modifier.php?erreur='$erreur'");
   }else{
-    $eleve = eleve :: e_modifier($id,$nom,$prenom,$age,$telephone, $email);
+    $eleves = eleve :: e_modifier($id,$nom,$prenom,$age,$telephone, $email);
     header("Location: ../eleve.php");
   }
 ?>

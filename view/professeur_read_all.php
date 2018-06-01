@@ -21,7 +21,7 @@
          echo"<tr>";
            echo"<th>Nom</th>";
            echo"<th>Prénom</th>";
-           echo"<th>Age</th>";
+           echo"<th>Date de naissance</th>";
            echo"<th>Téléphone</th>";
            echo"<th>Email</th>";
            echo"<th></th>";
@@ -33,11 +33,13 @@
           echo"<tr>";
            echo"<td>" . $row['professeur_nom'] . "</td>";
            echo"<td>" . $row['professeur_prenom'] . "</td>";
-           echo"<td>" . $row['professeur_age'] . "</td>";
+           echo"<td>" . $row['professeur_date_naissance'] . "</td>";
            echo"<td>" . $row['professeur_telephone'] . "</td>";
            echo"<td>" . $row['professeur_email'] . "</td>";
-           echo"<td>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </td>";
-           echo"<td>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </td>";
+           if (!$profs[0]=0){
+             echo"<td>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </td>";
+             echo"<td>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </td>";
+           }
 
          echo"</tr>";}
        echo"</tbody>";
