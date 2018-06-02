@@ -35,7 +35,7 @@ $email =$data[5];
       </div>
       <div class = form-group>
         <input class="form-control" type="text" placeholder="Date de naissance"
-          name="eleve_dn" value=<?php echo"' $dn'" ?>>
+          name="eleve_dn" value=<?php echo"'$dn'" ?>>
       </div>
       <div class = form-group>
         <input class="form-control" type="text" placeholder="Téléphone"
