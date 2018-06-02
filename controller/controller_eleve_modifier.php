@@ -21,6 +21,6 @@
     $eleves = Eleve :: e_telephone_modifier($id,$telephone);
     $eleves = Eleve :: e_email_modifier($id,$email);
     //$eleves = Eleve :: e_modifier($id,$nom,$prenom,$dn,$telephone, $email);
-    header("Location: ../eleve.php");
+    header("Location: ../Eleve.php");
   }
 ?>
