@@ -1,6 +1,10 @@
 <?php
 
   require_once('routeur.php');
+
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
   require_once('../model/model_professeur.php');
   $id=htmlspecialchars($_POST['professeur_id']);
   $nom = htmlspecialchars($_POST['professeur_nom']);

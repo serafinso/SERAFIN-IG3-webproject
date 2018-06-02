@@ -30,11 +30,14 @@ CREATE TABLE professeur (
   professeur_email varchar(100) NOT NULL UNIQUE
 );
 
+--Pas deux fois le même libellé sinon ajouté à la table du même libellé
 CREATE TABLE stock(
   stock_id SERIAL PRIMARY KEY,
   stock_libelle varchar(100) NOT NULL,
   stock_nb numeric(5)
 );
+
+
 
 --Pas de date de réservation car réservation dans la journée et doit être supprimer après l'utilisation
 CREATE TABLE emprunt(

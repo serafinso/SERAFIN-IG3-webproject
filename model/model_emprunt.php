@@ -1,8 +1,8 @@
 <?php
 
 /**
-  *Class Form
-  *Permet de générer un formulaire
+  *Class Emprunt
+  *Permet de gérer un emprunt
   */
 
 

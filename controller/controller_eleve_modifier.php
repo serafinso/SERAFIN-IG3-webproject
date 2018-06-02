@@ -1,5 +1,9 @@
 <?php
+  require_once('routeur.php');
 
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
 
   require_once('routeur.php');
   require_once('../model/model_eleve.php');
@@ -13,14 +17,16 @@
   var_dump($nom, $prenom, $dn, $telephone, $email);
   if (empty($nom) || empty($prenom) || empty($dn) || empty($telephone) || empty($email)) {
       $erreur = "Veuillez remplir tous les champs";
-      header("Location: ../eleve_modifier.php?erreur='$erreur'");
+      header("Location: ../Eleve_modifier.php?erreur='$erreur'");
+  }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $erreur = "adresse email incorrect";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
   }else{
     $eleves = Eleve :: e_nom_modifier($id,$nom);
     $eleves = Eleve :: e_prenom_modifier($id,$prenom);
     $eleves = Eleve :: e_dn_modifier($id,$dn);
     $eleves = Eleve :: e_telephone_modifier($id,$telephone);
     $eleves = Eleve :: e_email_modifier($id,$email);
-    //$eleves = Eleve :: e_modifier($id,$nom,$prenom,$dn,$telephone, $email);
     header("Location: ../Eleve.php");
   }
 ?>

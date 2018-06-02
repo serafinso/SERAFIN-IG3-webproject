@@ -1,7 +1,10 @@
 <?php
 
   require_once('routeur.php');
-  require_once('controller/controller_deconnect.php');
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
+    setcookie('user', '', time() - 3600, '/');
 
   require_once('view/connexion.php');
 ?>

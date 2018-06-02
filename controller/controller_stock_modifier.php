@@ -2,6 +2,9 @@
 
 
   require_once('routeur.php');
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
   require_once('../model/model_stock.php');
   $id=htmlspecialchars($_POST['stock_id']);
   $nom = htmlspecialchars($_POST['stock_nom']);

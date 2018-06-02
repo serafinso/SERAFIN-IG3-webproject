@@ -1,8 +1,8 @@
 <?php
 
 /**
-  *Class Form
-  *Permet de générer un formulaire
+  *Class Stock
+  *Permet de gérer un stock
   */
 
 

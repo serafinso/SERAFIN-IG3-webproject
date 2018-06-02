@@ -1,8 +1,8 @@
 <?php
 
 /**
-  *Class Form
-  *Permet de générer un formulaire
+  *Class Eleve
+  *Permet de collecter des informatiosn sur un élève
   */
 
 

@@ -2,6 +2,10 @@
 
 
   require_once('routeur.php');
+
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
   require_once('../model/model_emprunt.php');
   $id=htmlspecialchars($_POST['emprunt_id']);
   $nom = htmlspecialchars($_POST['emprunt_nom']);

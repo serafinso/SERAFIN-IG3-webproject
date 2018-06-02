@@ -1,5 +1,9 @@
 <?php
 
+  if(!isConnected()){
+    header("location: Accueil.php");
+  }
+  
   require_once('routeur.php');
   require_once('../model/model_emprunt.php');
 

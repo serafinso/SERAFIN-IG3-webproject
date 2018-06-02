@@ -6,7 +6,10 @@
 <div class="container">
 <?php $title = "" ?>
 <?php ob_start(); ?>
-<?php $id = $_GET['ideleve'];
+<?php
+if (isset($_GET['ideleve'])){
+  $id = $_GET['ideleve'];
+}
 $data = Eleve::all_information_eleve($id);
 $data = $data[0];
 $nom = $data[1];
@@ -18,6 +21,20 @@ $email =$data[5];
 ?>
 <h1 class="text-center"> Modification du eleve <?php echo"$nom" ?></h1>
   <hr>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <?php if (isset($_GET['erreur'])): ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <?php echo $_GET['erreur']; ?>
+          <button type="button" class="btn btn-lg close" data-dismiss="alert" aria-label="Close" placeholder="error">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php endif; ?>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
   <div class="row">
   <div class="col"></div>
 

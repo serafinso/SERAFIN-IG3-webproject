@@ -1,8 +1,8 @@
 <?php
 
 /**
-  *Class Form
-  *Permet de générer un formulaire
+  *Class Professeur
+  *Permet de collecter des informations sur un professeur
   */
 
 
