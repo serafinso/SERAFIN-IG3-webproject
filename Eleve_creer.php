@@ -23,11 +23,6 @@
             name="eleve_date_naissance" endif; required />
         </div>
         <div class = form-group>
-          <option value="jour" />
-          <option value="mois" />
-          <option value="annee" />
-        </div>
-        <div class = form-group>
           <input class="form-control" type="text" placeholder="Téléphone"
             name="eleve_telephone" endif; required />
         </div>

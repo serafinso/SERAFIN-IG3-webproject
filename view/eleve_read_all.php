@@ -7,7 +7,7 @@
         <h1 class="text-center"> Elèves </h1>
     </div>
     <div class="col-sm-4">
-      <td>	<a class='btn btn-success' href='Eleve_creer.php'>Créer</a> </td>
+      <td>	<a class='btn btn-success btn-block' href='Eleve_creer.php'>Créer</a> </td>
     </div>
   </div>
 

@@ -6,7 +6,7 @@
 <div class="container">
 <?php $title = "" ?>
 <?php ob_start(); ?>
-<?php $id = $_GET['idprof'];
+<?php $id = $_GET['ideleve'];
 $data = Eleve::all_information_eleve($id);
 $data = $data[0];
 $nom = $data[1];

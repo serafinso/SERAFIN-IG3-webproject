@@ -33,6 +33,7 @@
         $req = $connect->prepare('SELECT * FROM eleve WHERE eleve_id = :eleve_id');
         $req->bindParam(':eleve_id', $eleve_id);
         $req->execute();
+        $result=null;
         while($data=$req->fetch())
         {
             $result[] = $data;

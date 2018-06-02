@@ -1,5 +1,6 @@
 drop table if exists users cascade;
 drop table if exists eleve cascade;
+drop table if exists stock cascade;
 drop table if exists professeur cascade;
 
 CREATE TABLE users (
@@ -28,7 +29,17 @@ CREATE TABLE professeur (
   professeur_email varchar(100) NOT NULL UNIQUE
 );
 
-CREATE TABLE STOCK(
-  nb_object numeric (5);
-  nb_balle numeric(5);
+CREATE TABLE stock(
+  stock_id SERIAL PRIMARY KEY,
+  stock_libelle varchar(100) NOT NULL,
+  stock_nb numeric(5)
+);
+
+CREATE TABLE emprunt(
+  emprunt_id SERIAL PRIMARY KEY,
+  stock_id SERIAL REFERENCES stock (stock_id),
+  eleve_id SERIAL REFERENCES other_table (eleve_id),
+  nb_emprunt_balle numeric(5),
+  nb_emprunt_raquette numeric(5),
+  rendu boolean,
 );

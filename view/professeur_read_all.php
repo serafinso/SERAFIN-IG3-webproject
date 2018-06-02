@@ -7,7 +7,7 @@
         <h1 class="text-center"> Professeurs </h1>
     </div>
     <div class="col-sm-4">
-      <td>	<a class='btn btn-success' href='Professeur_creer.php'>Créer</a> </td>
+      <td>	<a class='btn btn-success btn-block' href='Professeur_creer.php'>Créer</a> </td>
     </div>
   </div>
 
