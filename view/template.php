@@ -44,6 +44,7 @@
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Eleve.php">Eleve</a></li> <?php } ?>
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Professeur.php">Professeur</a></li> <?php } ?>
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Stock.php">Stock</a></li> <?php } ?>
+							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Emprunt.php">Emprunt</a></li> <?php } ?>
 					</ul>
           <ul class="navbar-nav navbar-right my-2 my-lg-0" id="navbarResponsive">
 						<?php if (!isConnected()) {?> <li class="nav-item"><a class="nav-link" href="Connexion.php"><span class="glyphicon-log-in"> </span>Connexion administrateur</a></li> <?php } ?>

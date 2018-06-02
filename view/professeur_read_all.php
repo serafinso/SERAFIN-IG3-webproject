@@ -30,8 +30,8 @@
                 echo"<p> Date de naissance :" . $row['professeur_date_naissance'] . "</p>";
                 echo"<p> Téléphone : " . $row['professeur_telephone'] . "</p>";
                 echo"<p> Email : " . $row['professeur_email'] . "</p>";
-                echo"<p>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </p>";
-                echo"<p>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </p>";
+                echo"<p>	<a class='btn btn-primary' href=\"Professeur_modifier.php?idprof=".$row['professeur_id']."\">Modifier </a> </p>";
+                echo"<p>	<a class='btn btn-danger' href=\"Professeur_supprimer.php?idprof=".$row['professeur_id']."\">Supprimer </a> </p>";
               echo"</div>";
             echo"</div>";
           echo"</div>";

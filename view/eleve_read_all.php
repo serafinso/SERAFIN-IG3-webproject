@@ -37,8 +37,8 @@
            echo"<td>" . $row['eleve_date_naissance'] . "</td>";
            echo"<td>" . $row['eleve_telephone'] . "</td>";
            echo"<td>" . $row['eleve_email'] . "</td>";
-           echo"<td>	<a class='btn btn-primary' href=\"Eleve_modifier?ideleve=".$row['eleve_id']."\">Modifier </a> </td>";
-           echo"<td>	<a class='btn btn-danger' href=\"Eleve_supprimer?ideleve=".$row['eleve_id']."\">Supprimer </a> </td>";
+           echo"<td>	<a class='btn btn-primary' href=\"Eleve_modifier.php?ideleve=".$row['eleve_id']."\">Modifier </a> </td>";
+           echo"<td>	<a class='btn btn-danger' href=\"Eleve_supprimer.php?ideleve=".$row['eleve_id']."\">Supprimer </a> </td>";
 
          echo"</tr>";}
        echo"</tbody>";

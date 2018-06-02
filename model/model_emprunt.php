@@ -60,14 +60,14 @@
       *Modifie un emprunt
       */
 
-    public static function em_modifier($s_id,$s_nom,$s_nb)
+    public static function em_modifier($em_id,$em_nom,$em_nb)
     {
-        var_dump($s_id);
+        var_dump($em_id);
         require_once('bd.php');
         $req=$connect->prepare("UPDATE emprunt SET emprunt_nom=:emprunt_nom, emprunt_nb=:emprunt_nb
-           WHERE emprunt_id = '$s_id'");
-        $req->bindParam(':emprunt_nom',$s_nom);
-        $req->bindParam(':emprunt_nb',$s_nb);
+           WHERE emprunt_id = '$em_id'");
+        $req->bindParam(':emprunt_nom',$em_nom);
+        $req->bindParam(':emprunt_nb',$em_nb);
         $req->execute();
     }
 
@@ -76,12 +76,27 @@
     *Supprime un emprunt
     */
 
-    public static function em_supprimer($em_id)
+    public static function em_perdu($em_id)
+    {
+        require_once('bd.php');
+        $req = $connect->prepare('DELETE FROM emprunt WHERE emprunt_id=:em_id');
+        $req->bindParam(':em_id',$em_id);
+        $req->execute();
+    }
+
+    /**
+    *@param int id
+    *Supprime un emprunt
+    */
+
+    public static function em_rendu($em_id)
     {
         require_once('bd.php');
         $req = $connect->prepare('DELETE FROM emprunt WHERE emprunt_id=:em_id');
         $req->bindParam(':s_id',$em_id);
         $req->execute();
+
+        //TO DO : remettre dans le stock
     }
   }
 ?>

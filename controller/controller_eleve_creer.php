@@ -14,6 +14,6 @@
       header("Location: ../eleve_creer.php?erreur='$erreur'");
   }else{
     $eleves = ELeve:: e_creer($nom,$prenom,$dn,$telephone,$email);
-    header("Location: ../eleve.php");
+    header("Location: ../Eleve.php");
   }
 ?>
