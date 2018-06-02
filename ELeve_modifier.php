@@ -11,7 +11,7 @@ $data = Eleve::all_information_eleve($id);
 $data = $data[0];
 $nom = $data[1];
 $prenom = $data[2];
-$age = $data[3];
+$dn = $data[3];
 $telephone = $data[4];
 $email =$data[5];
 
@@ -34,8 +34,8 @@ $email =$data[5];
         name="eleve_prenom" value=<?php echo"'$prenom'" ?> >
       </div>
       <div class = form-group>
-        <input class="form-control" type="text" placeholder="Age"
-          name="eleve_age" value=<?php echo"' $age'" ?>>
+        <input class="form-control" type="text" placeholder="Date de naissance"
+          name="eleve_dn" value=<?php echo"' $dn'" ?>>
       </div>
       <div class = form-group>
         <input class="form-control" type="text" placeholder="Téléphone"

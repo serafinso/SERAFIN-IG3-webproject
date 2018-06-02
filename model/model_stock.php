@@ -63,7 +63,7 @@
     public static function s_modifier($s_id,$s_nom,$s_nb)
     {
         require_once('bd.php');
-        $req=$connect->prepare("UPDATE stock SET stock_nom=:stock_nom, stock_nb=:stock_nb
+        $req=$connect->prepare("UPDATE stock SET stock_libelle=:stock_nom, stock_nb=:stock_nb
            WHERE stock_id = '$s_id'");
         $req->bindParam(':stock_nom',$s_nom);
         $req->bindParam(':stock_nb',$s_nb);

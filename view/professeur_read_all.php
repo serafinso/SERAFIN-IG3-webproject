@@ -27,7 +27,7 @@
                 echo"<h2> Professeur </h2>";
                 echo"<p> Nom : " . $row['professeur_nom'] . "</p>";
                 echo"<p> Prenom : " . $row['professeur_prenom'] . "</p>";
-                echo"<p> Date de naissance :" . $row['professeur_date_naissance'] . "</p>";
+                echo"<p> Date de naissance :" . $row['professeur_naissance'] . "</p>";
                 echo"<p> Téléphone : " . $row['professeur_telephone'] . "</p>";
                 echo"<p> Email : " . $row['professeur_email'] . "</p>";
                 echo"<p>	<a class='btn btn-primary' href=\"Professeur_modifier.php?idprof=".$row['professeur_id']."\">Modifier </a> </p>";

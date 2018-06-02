@@ -49,7 +49,7 @@
     public static function prof_creer($professeur_nom,$professeur_prenom,$professeur_dn,$professeur_telephone, $professeur_email)
     {
         require_once('bd.php');
-        $req=$connect->prepare('INSERT INTO professeur(professeur_nom,professeur_prenom,professeur_date_naissance,professeur_telephone,professeur_email) VALUES (?,?,?,?,?)');
+        $req=$connect->prepare('INSERT INTO professeur(professeur_nom,professeur_prenom,professeur_naissance,professeur_telephone,professeur_email) VALUES (?,?,?,?,?)');
         /*$req->bindParam(':professeur_nom',$professeur_nom);
         $req->bindParam(':professeur_prenom',$professeur_prenom);
         $req->bindParam(':professeur_dn',$professeur_dn);
@@ -68,7 +68,7 @@
         var_dump($p_id);
         require_once('bd.php');
         $req=$connect->prepare("UPDATE professeur SET professeur_nom=:professeur_nom, professeur_prenom=:professeur_prenom,
-           professeur_dn=:professeur_dn,professeur_telephone= :professeur_telephone,professeur_email=:professeur_email WHERE professeur_id = '$p_id'");
+           professeur_naissance=:professeur_dn,professeur_telephone= :professeur_telephone,professeur_email=:professeur_email WHERE professeur_id = '$p_id'");
         $req->bindParam(':professeur_nom',$p_nom);
         $req->bindParam(':professeur_prenom',$p_prenom);
         $req->bindParam(':professeur_dn',$p_dn);

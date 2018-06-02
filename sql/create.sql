@@ -16,7 +16,7 @@ CREATE TABLE eleve (
   eleve_id SERIAL PRIMARY KEY,
   eleve_nom varchar(100) NOT NULL,
   eleve_prenom varchar(100) NOT NULL,
-  eleve_date_naissance varchar(10) NOT NULL,
+  eleve_naissance varchar(10) NOT NULL,
   eleve_telephone varchar (20) NOT NULL,
   eleve_email varchar(100) NOT NULL UNIQUE
 );
@@ -25,7 +25,7 @@ CREATE TABLE professeur (
   professeur_id SERIAL PRIMARY KEY,
   professeur_nom varchar(100) NOT NULL,
   professeur_prenom varchar(100) NOT NULL,
-  professeur_date_naissance varchar(10) NOT NULL,
+  professeur_naissance varchar(10) NOT NULL,
   professeur_telephone varchar (20) NOT NULL,
   professeur_email varchar(100) NOT NULL UNIQUE
 );

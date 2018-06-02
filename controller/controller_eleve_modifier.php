@@ -15,7 +15,12 @@
       $erreur = "Veuillez remplir tous les champs";
       header("Location: ../eleve_modifier.php?erreur='$erreur'");
   }else{
-    $eleves = eleve :: e_modifier($id,$nom,$prenom,$age,$telephone, $email);
+    $eleves = Eleve :: e_nom_modifier($id,$nom);
+    $eleves = Eleve :: e_prenom_modifier($id,$prenom);
+    $eleves = Eleve :: e_dn_modifier($id,$dn);
+    $eleves = Eleve :: e_telephone_modifier($id,$telephone);
+    $eleves = Eleve :: e_email_modifier($id,$email);
+    //$eleves = Eleve :: e_modifier($id,$nom,$prenom,$age,$telephone, $email);
     header("Location: ../eleve.php");
   }
 ?>

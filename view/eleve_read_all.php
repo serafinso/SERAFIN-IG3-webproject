@@ -34,7 +34,7 @@
           echo"<tr>";
            echo"<td>" . $row['eleve_nom'] . "</td>";
            echo"<td>" . $row['eleve_prenom'] . "</td>";
-           echo"<td>" . $row['eleve_date_naissance'] . "</td>";
+           echo"<td>" . $row['eleve_naissance'] . "</td>";
            echo"<td>" . $row['eleve_telephone'] . "</td>";
            echo"<td>" . $row['eleve_email'] . "</td>";
            echo"<td>	<a class='btn btn-primary' href=\"Eleve_modifier.php?ideleve=".$row['eleve_id']."\">Modifier </a> </td>";

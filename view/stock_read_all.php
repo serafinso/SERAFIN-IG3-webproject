@@ -28,8 +28,7 @@
                   echo"<p class='card-title'> Nombre : ".$row['stock_nb']."</p>";
                   echo"<a class='btn btn-primary' href=\"Stock_modifier.php?idstock=".$row['stock_id']."\">Modifier </a>";
                   echo" ";
-                  echo"<a class='btn btn-danger' href=\"Stock_rendu.php?idstock=".$row['stock_id']."\">Rendre</a>";
-                  echo"<a class='btn btn-danger' href=\"Stock_perdu.php?idstock=".$row['stock_id']."\">Perdu</a>";
+                  echo"<a class='btn btn-danger' href=\"Stock_supprimer.php?idstock=".$row['stock_id']."\">Supprimer</a>";
                 echo"</div>";
               echo"</div>";
             echo"</div>";
