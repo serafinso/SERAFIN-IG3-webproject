@@ -39,7 +39,7 @@
            echo"<td>" . $row['eleve_email'] . "</td>";
            echo"<td>	<a class='btn btn-primary' href=\"Eleve_modifier.php?ideleve=".$row['eleve_id']."\">Modifier </a> </td>";
            echo"<td>	<a class='btn btn-danger' href=\"Eleve_supprimer.php?ideleve=".$row['eleve_id']."\">Supprimer </a> </td>";
-           echo"<p>	<a class='btn btn-danger' href=\"Professeur_supprimer.php?idprof=".$row['professeur_id']."\">Supprimer </a> </p>";
+
          echo"</tr>";}
        echo"</tbody>";
       echo"</table>";
