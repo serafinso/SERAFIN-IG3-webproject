@@ -41,7 +41,6 @@
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto">
 							<li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil<span class="sr-only">(current)</span></a></li>
-							<li class="nav-item" ><a class="nav-link" href ="Informations.php">Informations</a></li>
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Eleve.php">Eleve</a></li> <?php } ?>
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Professeur.php">Professeur</a></li> <?php } ?>
 							<?php if(isConnected()) {?><li class="nav-item" ><a class="nav-link" href ="Stock.php">Stock</a></li> <?php } ?>

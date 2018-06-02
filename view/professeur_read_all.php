@@ -7,7 +7,7 @@
         <h1 class="text-center"> Professeurs </h1>
     </div>
     <div class="col-sm-4">
-      <td>	<a class='btn btn-success btn-block' href='Professeur_creer.php'>Créer</a> </td>
+      <p>	<a class='btn btn-success btn-block' href='Professeur_creer.php'>Créer</a> </p>
     </div>
   </div>
 
@@ -16,34 +16,36 @@
     if (!isset($profs)){
       echo"Aucun professeur";
     }else{
-      echo "<table class='table'>";
-       echo"<thead class='thead-dark'>";
-         echo"<tr>";
-           echo"<th>Nom</th>";
-           echo"<th>Prénom</th>";
-           echo"<th>Date de naissance</th>";
-           echo"<th>Téléphone</th>";
-           echo"<th>Email</th>";
-           echo"<th></th>";
-           echo"<th></th>";
-         echo"</tr>";
-       echo"</thead>";
-       echo"<tbody>";
+       $c=1;
         foreach($profs as $row) {
-          echo"<tr>";
-           echo"<td>" . $row['professeur_nom'] . "</td>";
-           echo"<td>" . $row['professeur_prenom'] . "</td>";
-           echo"<td>" . $row['professeur_date_naissance'] . "</td>";
-           echo"<td>" . $row['professeur_telephone'] . "</td>";
-           echo"<td>" . $row['professeur_email'] . "</td>";
-           if (!$profs[0]=0){
-             echo"<td>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </td>";
-             echo"<td>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </td>";
-           }
+          if($c%3==1){
+            echo"<div class='row'>";
+          }
+          echo"<div class='col-sm-4'>";
+            echo"<div class='card'>";
+              echo"<div class='card-body'>";
+                echo"<h2> Professeur </h2>";
+                echo"<p> Nom : " . $row['professeur_nom'] . "</p>";
+                echo"<p> Prenom : " . $row['professeur_prenom'] . "</p>";
+                echo"<p> Date de naissance :" . $row['professeur_date_naissance'] . "</p>";
+                echo"<p> Téléphone : " . $row['professeur_telephone'] . "</p>";
+                echo"<p> Email : " . $row['professeur_email'] . "</p>";
+                echo"<p>	<a class='btn btn-primary' href=\"Professeur_modifier?idprof=".$row['professeur_id']."\">Modifier </a> </p>";
+                echo"<p>	<a class='btn btn-danger' href=\"Professeur_supprimer?idprof=".$row['professeur_id']."\">Supprimer </a> </p>";
+              echo"</div>";
+            echo"</div>";
+          echo"</div>";
 
-         echo"</tr>";}
+          if($c%3==0){
+            echo"</div>";
+            echo"<br>";
+          }
+
+          $c++;
+        }
+        /* echo"</tr>";}
        echo"</tbody>";
-      echo"</table>";
+      echo"</table>";*/
    }?>
 
   <?php $content = ob_get_clean(); ?>

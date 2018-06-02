@@ -16,6 +16,7 @@
     if (!isset($eleves)){
       echo"Aucun eleve";
     }else{
+    echo "<div class='table-responsive'>";
       echo "<table class='table'>";
        echo"<thead class='thead-dark'>";
          echo"<tr>";
@@ -42,6 +43,7 @@
          echo"</tr>";}
        echo"</tbody>";
       echo"</table>";
+    echo"</div>";
    }?>
 
   <?php $content = ob_get_clean(); ?>
