@@ -11,24 +11,16 @@
       <form class="form-signin" method="post" action="controller/controller_emprunt_creer.php" >
 
         <div class = form-group>
-          <input class="form-control" type="text" placeholder="Nom"
-            name="emprunt_nom" endif; required />
+          <input class="form-control" type="text" placeholder="Eleve"
+            name="eleve_id" endif; required />
         </div>
         <div class = form-group>
-          <input class="form-control" type="text" placeholder="Prénom"
-          name="emprunt_prenom" required />
+          <input class="form-control" type="text" placeholder="Nombre de balle"
+          name="nb_balle" required />
         </div>
         <div class = form-group>
-          <input class="form-control" type="text" placeholder="Date de naissance JJ-MM-AA"
-            name="emprunt_date_naissance" endif; required />
-        </div>
-        <div class = form-group>
-          <input class="form-control" type="text" placeholder="Téléphone"
-            name="emprunt_telephone" endif; required />
-        </div>
-        <div class = form-group>
-          <input class="form-control" type="text" placeholder="Email"
-            name="emprunt_email" endif; required />
+          <input class="form-control" type="text" placeholder="Nombre de raquette"
+            name="nb_raquette" endif; required />
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login"> AJOUTER </button>
 

@@ -42,32 +42,49 @@
     }
 
     /**
-    *@param String nom, le emprunt, l'dn, le telephone et l'email
-    *Creer un emprunt
+    *@param String balle, le emprunt, la date de naissance, le telephone et l'email
+    *Creer un emprunt et enmève les objet emprunté au stock
     */
 
-    public static function em_creer($emprunt_libelle,$emprunt_nb)
+    public static function em_creer($eleve_id,$nb_raquette, $nb_balle, $stock_balle, $stock_raquette)
     {
         require_once('bd.php');
-        $req=$connect->prepare('INSERT INTO emprunt(emprunt_libelle,emprunt_nb) VALUES (?,?)');
-        /*$req->bindParam(':emprunt_nom',$emprunt_nom);
-        $req->bindParam(':emprunt_nb',$emprunt_nb);*/
-        $req->execute(array($emprunt_libelle, $emprunt_nb));
+        $req=$connect->prepare('INSERT INTO emprunt(stock_id,eleve_id, nb_emprunt_balle, nb_emprunt_raquette) VALUES (?,?,?,?,?)');
+        $req->execute(array($stock_id,$eleve_id,$nb_raquette, $nb_balle));
+
+
+        //décremente le stock
+
+        $req=$connect->prepare("UPDATE stock SET stock_nb = :nb_emprunt_balle
+           WHERE stock_id = '1'");
+        $req->bindParam(':nb_emprunt_balle',$stock_balle - $nb_balle);
+        $req->execute();
+
+        $req=$connect->prepare("UPDATE stock SET stock_nb = :nb_emprunt_raquette
+           WHERE stock_id = '2'");
+        $req->bindParam(':nb_emprunt_raquette',$stock_raquette - $nb_raquette);
+        $req->execute();
+
       }
 
       /**
-      *@param int id, l'dn String nom, le nb, le telephone et l'email
+      *@param int id, l'dn String balle, le nb, le telephone et l'email
       *Modifie un emprunt
       */
 
-    public static function em_modifier($em_id,$em_nom,$em_nb)
+    public static function em_modifier($em_id,$stock_id,$eleve_id,$nb_raquette, $nb_balle)
     {
-        var_dump($em_id);
         require_once('bd.php');
-        $req=$connect->prepare("UPDATE emprunt SET emprunt_nom=:emprunt_nom, emprunt_nb=:emprunt_nb
+        $req=$connect->prepare("UPDATE emprunt SET
+          stock_id = :stock_id,
+          eleve_id = :eleve_id,
+          nb_emprunt_balle=:nb_emprunt_balle,
+          nb_emprunt_raquette=:nb_emprunt_raquette)
            WHERE emprunt_id = '$em_id'");
-        $req->bindParam(':emprunt_nom',$em_nom);
-        $req->bindParam(':emprunt_nb',$em_nb);
+        $req->bindParam(':stock_id',$stock_id);
+        $req->bindParam(':eleve_id',$eleve_id);
+        $req->bindParam(':nb_emprunt_balle',$em_balle);
+        $req->bindParam(':nb_emprunt_raquette',$em_nb);
         $req->execute();
     }
 
@@ -95,6 +112,8 @@
         $req = $connect->prepare('DELETE FROM emprunt WHERE emprunt_id=:em_id');
         $req->bindParam(':s_id',$em_id);
         $req->execute();
+
+
 
         //TO DO : remettre dans le stock
     }

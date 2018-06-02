@@ -2,6 +2,7 @@ drop table if exists users cascade;
 drop table if exists eleve cascade;
 drop table if exists stock cascade;
 drop table if exists professeur cascade;
+drop table if exists emprunt cascade;
 
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,
@@ -35,11 +36,12 @@ CREATE TABLE stock(
   stock_nb numeric(5)
 );
 
+--Pas de date de réservation car réservation dans la journée et doit être supprimer après l'utilisation
 CREATE TABLE emprunt(
   emprunt_id SERIAL PRIMARY KEY,
-  stock_id SERIAL REFERENCES stock (stock_id),
-  eleve_id SERIAL REFERENCES other_table (eleve_id),
+  eleve_id SERIAL,
   nb_emprunt_balle numeric(5),
   nb_emprunt_raquette numeric(5),
   rendu boolean,
+  FOREIGN KEY (eleve_id) REFERENCES eleve (eleve_id)
 );

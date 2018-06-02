@@ -26,7 +26,10 @@ if(isset($_POST["login"]))
     if($count > 0){
       $result = $statement->fetchAll();
       foreach($result as $row){
-        if($userPass == $row["user_password"])
+        $cript = hash( 'sha256', $userPass );
+        var_dump($cript);
+        var_dump($row["user_password"]);
+        if($cript == $row["user_password"])
         {
           setcookie("user", $row["user_id"], time()+3600*24*365, "/");
           header("location:Accueil.php");
