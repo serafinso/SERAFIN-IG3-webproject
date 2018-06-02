@@ -36,7 +36,7 @@
         </div>
         <div class = form-group>
           <input class="form-control" type="text" placeholder="Date de naissance"
-            name="professeur_date_naissance" value=<?php echo"' $dn'" ?>>
+            name="professeur_date_naissance" value=<?php echo"'$dn'" ?>>
         </div>
         <div class = form-group>
           <input class="form-control" type="text" placeholder="Téléphone"

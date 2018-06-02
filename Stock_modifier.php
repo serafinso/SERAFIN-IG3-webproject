@@ -29,7 +29,7 @@
         </div>
         <div class = form-group>
           <input class="form-control" type="text" placeholder="Prénom"
-          name="stock_stock" value=<?php echo"'$stock'" ?> >
+          name="stock_nb" value=<?php echo"'$stock'" ?> >
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="login"> MODIFIER </button>
 
