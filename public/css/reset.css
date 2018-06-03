@@ -20,7 +20,6 @@ html{
 body{
   margin:0 ;
   position: relative;
-  background-color: #E0FFFF;
 }
 
 
@@ -79,7 +78,7 @@ dfn{
   font-style:italic;
 }
 
-mark{background-color:#ff0;color:#000}
+mark{;color:#000}
 
 sub{
   bottom:-0.25em;

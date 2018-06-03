@@ -17,11 +17,26 @@
 
   if (empty($nom) || empty($prenom) || empty($dn) || empty($telephone) || empty($email)) {
       $erreur = "Veuillez remplir tous les champs";
-      header("Location: ../Eleve_creer.php?erreur='$erreur'");
-  }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-     $erreur = "adresse email incorrect";
-     header("Location: ../Eleve_creer.php?erreur='$erreur'");
-  }else{
+      header("Location: ../Eleve_modifier.php?erreur='$erreur'");
+  }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $erreur = "adresse email incorrect";
+      header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }elseif(strlen ( $nom)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }elseif(strlen ( $prenom)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }elseif(strlen ( $dn)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }elseif(strlen ( $telephone)>20){
+       $message = "mot de passe trop long";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }elseif(strlen ( $email)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Eleve_modifier.php?erreur='$erreur'&ideleve='$id'");
+  }else {
     $eleves = ELeve:: e_creer($nom,$prenom,$dn,$telephone,$email);
     header("Location: ../Eleve.php");
   }

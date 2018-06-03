@@ -12,7 +12,7 @@
     *@return array data : toutes les informations de tous les stocks, si aucun stock return null
     */
     public static function all_stock(){
-      require_once('bd.php');
+      require('bd.php');
       $req = $connect->prepare('SELECT * FROM stock');
       $req->execute();
       $result=null;
@@ -29,7 +29,7 @@
 
     public static function all_information_stock($stock_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('SELECT * FROM stock WHERE stock_id = :stock_id');
         $req->bindParam(':stock_id', $stock_id);
         $req->execute();
@@ -48,7 +48,7 @@
 
     public static function s_creer($stock_libelle,$stock_nb)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req=$connect->prepare('INSERT INTO stock(stock_libelle,stock_nb) VALUES (?,?)');
         /*$req->bindParam(':stock_nom',$stock_nom);
         $req->bindParam(':stock_nb',$stock_nb);*/
@@ -62,7 +62,7 @@
 
     public static function s_modifier($s_id,$s_nom,$s_nb)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req=$connect->prepare("UPDATE stock SET stock_libelle=:stock_nom, stock_nb=:stock_nb
            WHERE stock_id = '$s_id'");
         $req->bindParam(':stock_nom',$s_nom);
@@ -77,7 +77,7 @@
 
     public static function s_supprimer($s_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('DELETE FROM stock WHERE stock_id=:s_id');
         $req->bindParam(':s_id',$s_id);
         $req->execute();

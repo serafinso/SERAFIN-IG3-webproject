@@ -6,7 +6,7 @@
   }
     setcookie('user', '', time() - 3600, '/');
 
-  require_once('view/connexion.php');
+    header("location: Accueil.php");
 ?>
 
  ?>

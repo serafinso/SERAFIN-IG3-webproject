@@ -5,3 +5,5 @@ insert into professeur(professeur_nom, professeur_prenom, professeur_naissance, 
 insert into professeur(professeur_nom, professeur_prenom, professeur_naissance, professeur_telephone, professeur_email) values('Luca', 'DEBEIR', '03/03/0303', '0608457941', 'ld@gmail.com');
 insert into stock VALUES(1, 'balle', 100);
 insert into stock VALUES(2, 'raquette', 50);
+delete from users where user_id = 1;
+delete from users where user_id = 2;

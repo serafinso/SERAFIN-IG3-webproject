@@ -12,7 +12,7 @@
     *@return array data : toutes les informations de tous les eleves, si aucun eleve return null
     */
     public static function all_eleve(){
-      require_once('bd.php');
+      require('bd.php');
       $req = $connect->prepare('SELECT * FROM eleve');
       $req->execute();
       $result=null;
@@ -29,7 +29,7 @@
 
     public static function all_information_eleve($eleve_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('SELECT * FROM eleve WHERE eleve_id = :eleve_id');
         $req->bindParam(':eleve_id', $eleve_id);
         $req->execute();
@@ -48,7 +48,7 @@
 
     public static function e_creer($eleve_nom,$eleve_prenom,$eleve_dn,$eleve_telephone, $eleve_email)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req=$connect->prepare('INSERT INTO eleve(eleve_nom,eleve_prenom,eleve_naissance,eleve_telephone,eleve_email) VALUES (?,?,?,?,?)');
         /*$req->bindParam(':eleve_nom',$eleve_nom);
         $req->bindParam(':eleve_prenom',$eleve_prenom);
@@ -130,7 +130,7 @@
 
     public static function e_supprimer($e_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('DELETE FROM eleve WHERE eleve_id=:e_id');
         $req->bindParam(':e_id',$e_id);
         $req->execute();

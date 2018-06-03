@@ -1,0 +1,25 @@
+RewriteEngine on
+
+RewriteRule professeur/(.*)$ Professeur.php/$1 [L]
+
+RewriteRule stock/(.*)$ Stock.php/$1 [L]
+
+RewriteRule accueil/(.*)$ Accueil.php/$1 [L]
+
+RewriteRule eleve/(.*)$ Eleve.php/$1 [L]
+
+RewriteRule Emprunt/(.*)$ Emprunt.php/$1 [L]
+
+RewriteRule modifier-eleve/(.*)$ Eleve_modifier.php?ideleve=$1.php [L]
+
+RewriteRule creer-eleve/(.*)$ Eleve_creer.php/$1 [L]
+
+RewriteRule modifier-professeur/(.*)$ Professeur_modifier.php?idprof=$1 [L]
+
+RewriteRule creer-professeur/(.*)$ Professeur_creer.php/$1 [L]
+
+RewriteRule stock-creer/(.*)$ Stock_creer.php/$1 [L]
+
+RewriteRule stock-modifier/(.*)$ Stock_modifier.php?idstock=$1 [L]
+
+RewriteRule accueil/(.*)$ Deconnexion.php/$1 [L]

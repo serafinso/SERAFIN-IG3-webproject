@@ -15,9 +15,26 @@
 
   if (empty($nom) || empty($prenom) || empty($dn) || empty($telephone) || empty($email)) {
       $erreur = "Veuillez remplir tous les champs";
-      var_dump($nom, $prenom, $dn, $telephone, $email );
-      //header("Location: ../Professeur_creer.php?erreur='$erreur'");
-  }else{
+      header("Location: ../Professeur_modifier.php?erreur='$erreur'");
+  }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $erreur = "adresse email incorrect";
+      header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }elseif(strlen ( $nom)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }elseif(strlen ( $prenom)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }elseif(strlen ( $dn)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }elseif(strlen ( $telephone)>20){
+       $message = "mot de passe trop long";
+       header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }elseif(strlen ( $email)>100){
+       $message = "mot de passe trop long";
+       header("Location: ../Professeur_modifier.php?erreur='$erreur'&idprof='$id'");
+  }else {
     $profs = Professeur :: prof_creer($nom,$prenom,$dn,$telephone, $email);
     header("Location: ../Professeur.php");
   }

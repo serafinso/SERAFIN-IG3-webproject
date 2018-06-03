@@ -12,7 +12,7 @@
     *@return array data : toutes les informations de tous les emprunts, si aucun emprunt return null
     */
     public static function all_emprunt(){
-      require_once('bd.php');
+      require('bd.php');
       $req = $connect->prepare('SELECT * FROM emprunt');
       $req->execute();
       $result=null;
@@ -29,7 +29,7 @@
 
     public static function all_information_emprunt($emprunt_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('SELECT * FROM emprunt WHERE emprunt_id = :emprunt_id');
         $req->bindParam(':emprunt_id', $emprunt_id);
         $req->execute();
@@ -48,7 +48,7 @@
 
     public static function em_creer($eleve_id,$nb_raquette, $nb_balle, $stock_balle, $stock_raquette)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req=$connect->prepare('INSERT INTO emprunt(stock_id,eleve_id, nb_emprunt_balle, nb_emprunt_raquette) VALUES (?,?,?,?,?)');
         $req->execute(array($stock_id,$eleve_id,$nb_raquette, $nb_balle));
 
@@ -74,7 +74,7 @@
 
     public static function em_modifier($em_id,$stock_id,$eleve_id,$nb_raquette, $nb_balle)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req=$connect->prepare("UPDATE emprunt SET
           stock_id = :stock_id,
           eleve_id = :eleve_id,
@@ -103,17 +103,20 @@
 
     /**
     *@param int id
-    *Supprime un emprunt
+    *Supprime un emprunt et increment le stock de la quantité
     */
 
     public static function em_rendu($em_id)
     {
-        require_once('bd.php');
+        require('bd.php');
         $req = $connect->prepare('DELETE FROM emprunt WHERE emprunt_id=:em_id');
         $req->bindParam(':s_id',$em_id);
         $req->execute();
 
-
+        require('bd.php');
+        $req = $connect->prepare('UPDATE stock SET stock_nb += emprunt_nb WHERE stock_emprunt =:id_stock');
+        $req->bindParam(':s_id',$em_id);
+        $req->execute();
 
         //TO DO : remettre dans le stock
     }

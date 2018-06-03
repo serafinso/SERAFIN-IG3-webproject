@@ -7,7 +7,11 @@
 <div class="container">
   <?php $title = "" ?>
   <?php ob_start(); ?>
-  <?php $id = $_GET['idprof'];
+  <?php
+  $id = null;
+  if (isset($_GET['idprof'])){
+    $id = $_GET['idprof'];
+  }
   $data = Professeur::all_information_professeur($id);
   $data = $data[0];
   $nom = $data[1];

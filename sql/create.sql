@@ -34,7 +34,7 @@ CREATE TABLE professeur (
 CREATE TABLE stock(
   stock_id SERIAL PRIMARY KEY,
   stock_libelle varchar(100) NOT NULL,
-  stock_nb numeric(5)
+  stock_nb numeric(5) NOT NULL
 );
 
 
