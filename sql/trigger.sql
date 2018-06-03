@@ -11,6 +11,11 @@ $result$ LANGUAGE plpgsql;
 DROP TRIGGER IF EXISTS always_one_user ON users;
 CREATE TRIGGER always_one_user BEFORE DELETE ON users FOR EACH ROW EXECUTE PROCEDURE one_user();
 
+
+
+
+
+
 CREATE OR REPLACE function not_same_l() RETURNS trigger AS $$
 DECLARE
   existedeja numeric(5);
@@ -27,6 +32,8 @@ $$ LANGUAGE plpgsql;
 
 DROP TRIGGER IF EXISTS not_same_libelle ON stock;
 CREATE TRIGGER not_same_libelle AFTER INSERT ON stock FOR EACH ROW EXECUTE PROCEDURE not_same_l();
+
+
 
 
 

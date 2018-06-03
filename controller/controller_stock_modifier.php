@@ -1,7 +1,7 @@
 <?php
 
 
-  require_once('routeur.php');
+  require_once('../routeur.php');
   if(!isConnected()){
     header("location: Accueil.php");
   }

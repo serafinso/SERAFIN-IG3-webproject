@@ -30,9 +30,8 @@
           $cript = hash( 'sha256', $userPass );
           if($cript == $row["user_password"])
           {
-            $co = array ($row["user_id"],$row["user_password"]);
-            $co_serialize = serialize($co);
-            setcookie("user", $co_serialize, time()+3600*24*365, "/");
+            setcookie("user",$row["user_id"] , time()+3600*24*365, "/");
+            setcookie("pw", $row["user_password"], time()+3600*24*365, "/");
             header("location:Accueil.php");
           }
           else

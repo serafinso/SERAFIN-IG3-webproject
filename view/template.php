@@ -42,7 +42,7 @@
           <ul class="navbar-nav mr-auto">
 							<li class="nav-item"><a class="nav-link" href="accueil">Accueil<span class="sr-only">(current)</span></a></li>
 							<?php if(isConnected()) {?>
-								<li class="nav-item" ><a class="nav-link" href ="eleve">Elève</a></li>
+								<li class="nav-item" ><a class="nav-link" href ="eleve">Élève</a></li>
 								<li class="nav-item" ><a class="nav-link" href ="professeur">Professeur</a></li>
 								<li class="nav-item" ><a class="nav-link" href ="stock">Stock</a></li>
 							<?php } ?>

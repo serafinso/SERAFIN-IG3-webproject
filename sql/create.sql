@@ -3,6 +3,7 @@ drop table if exists eleve cascade;
 drop table if exists stock cascade;
 drop table if exists professeur cascade;
 drop table if exists emprunt cascade;
+drop table if exists result cascade;
 
 CREATE TABLE users (
   user_id SERIAL PRIMARY KEY,

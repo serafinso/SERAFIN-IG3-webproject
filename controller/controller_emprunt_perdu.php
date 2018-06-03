@@ -5,9 +5,9 @@
   if(!isConnected()){
     header("location: Accueil.php");
   }
-  
-  require_once('model/model_eleve.php');
-  $id = $_GET['ideleve'];
-  $eleves = Eleve :: e_perdu($id);
-  header("Location: ../eleve.php");
+
+  require_once('model/model_emprunt.php');
+  $id = $_GET['idemprunt'];
+  $emprunts = Emprunt :: e_perdu($id);
+  header("Location: ../emprunt.php");
 ?>

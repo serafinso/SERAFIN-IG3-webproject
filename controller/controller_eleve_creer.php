@@ -2,11 +2,10 @@
 
 
 <?php
-  require_once('routeur.php');
+  require('../routeur.php');
   if(!isConnected()){
     header("location: Accueil.php");
   }
-  require_once('routeur.php');
   require_once('../model/model_eleve.php');
 
   $nom = htmlspecialchars($_POST['eleve_nom']);
