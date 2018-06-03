@@ -34,17 +34,17 @@
 	<body>
 		<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-						<a class="navbar-brand" href="accueil">Tennis Ventenac Cabardes</a>
+						<a class="navbar-brand" href="Accueil.php">Tennis Ventenac Cabardes</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="accueil">Accueil<span class="sr-only">(current)</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil<span class="sr-only">(current)</span></a></li>
 							<?php if(isConnected()) {?>
-								<li class="nav-item" ><a class="nav-link" href ="eleve">Élève</a></li>
-								<li class="nav-item" ><a class="nav-link" href ="professeur">Professeur</a></li>
-								<li class="nav-item" ><a class="nav-link" href ="stock">Stock</a></li>
+								<li class="nav-item" ><a class="nav-link" href ="Eleve.php">Élève</a></li>
+								<li class="nav-item" ><a class="nav-link" href ="Professeur.php">Professeur</a></li>
+								<li class="nav-item" ><a class="nav-link" href ="Stock.php">Stock</a></li>
 							<?php } ?>
 					</ul>
           <ul class="navbar-nav navbar-right my-2 my-lg-0" id="navbarResponsive">
