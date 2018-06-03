@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="carousel-item active">
-        <img src="../img/smiley.png" class="rounded" alt="Smiley">
+        <img src="../img/balle.jpg" class="rounded" alt="Smiley">
       </div>
       <div class="carousel-item">
         <img src="../img/play.jpg" class="rounded" alt="Play">
